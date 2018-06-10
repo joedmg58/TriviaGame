@@ -1,3 +1,5 @@
 $(document).ready( function() {
-   // $('div#page2').show(); //css('display','none!important');
+    
+    //register on click event for start button
+    $('#btnStart').click( gameStart );
 } );
