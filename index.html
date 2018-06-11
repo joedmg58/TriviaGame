@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
 
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Eater|Oleo+Script+Swash+Caps" rel="stylesheet">
+
     <!-- Using Bootstrap CSS 4.1.1 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     
@@ -13,41 +16,230 @@
 </head>
 <body>
 
-    <div class="background h-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="background h-100 d-flex flex-column align-items-center"> <!-- justify-content-center -->
 
-        <div id="page1" class="h-50 w-50  d-flex flex-column justify-content-center container yellow-centered-box">
+        <div id="page1" class="my-5 w-50 container yellow-centered-box"> <!-- h-50 d-flex flex-column align-items-center -->
 
-            <div id="gameTitle" class="row"><div class="col-12 text-center"><h1>Totally Trivial Trivia!</h1></div></div>
+            <div class="row my-2"><div class="col-12 text-center"><h1 id="gameTitle" class="display-4">Totally Trivial Trivia!</h1></div></div>
 
-            <div id="btnStart" class="row"><div class="col-12 text-center"><button class="btn btn-lg" type="button">START</button></div></div>
-
-            <div id="quizContainer" class="row">
+            <div id="colBtnStart" class="row my-5">
                 <div class="col-12 text-center">
+                    <button id="btnStart" class="btn btn-lg" type="button">START</button>
+                </div>
+            </div>
 
+            <div id="quizContainer" class="row my-4">
+                <div id="quizCol" class="col-12 text-center">
+
+                    <h3 id="timer" class="my-4">Time remaining :&nbsp;<span id="timeRemain"></span>&nbsp;seconds</h3>
+                    
+                    <!--
                     <form id="question1">
-                        <p>What was the first full length CGI movie ?</p>
+                        <h4>What was the first full length CGI movie ?</h4>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for="r1">
-                                <input type="radio" class="form-check-input" id="q1r1" value="1">A bug's Life
+                            <label class="form-check-label" for="q1r1">
+                                <input type="radio" class="form-check-input" id="q1r1" name='answer1' value="1">A bug's Life
                             </label>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for="r1">
-                                <input type="radio" class="form-check-input" id="q1r1" value="1">Monsters Inc.
+                            <label class="form-check-label" for="q1r2">
+                                <input type="radio" class="form-check-input" id="q1r2" name='answer1' value="2">Monsters Inc.
                             </label>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for="r1">
-                                <input type="radio" class="form-check-input" id="q1r1" value="1">Toy Story
+                            <label class="form-check-label" for="q1r3">
+                                <input type="radio" class="form-check-input" id="q1r3" name='answer1' value="3">Toy Story
                             </label>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for="r1">
-                                <input type="radio" class="form-check-input" id="q1r1" value="1">The Lion King
+                            <label class="form-check-label" for="q1r4">
+                                <input type="radio" class="form-check-input" id="q1r4" name='answer1' value="4">The Lion King
                             </label>
                         </div>    
                     </form>
 
+                    <form id="question2">
+                            <h4>What was the first full length CGI movie ?</h4>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="q1r1">
+                                    <input type="radio" class="form-check-input" id="q1r1" name='answer2' value="1">A bug's Life
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="q1r2">
+                                    <input type="radio" class="form-check-input" id="q1r2" name='answer2' value="2">Monsters Inc.
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="q1r3">
+                                    <input type="radio" class="form-check-input" id="q1r3" name='answer2' value="3">Toy Story
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="q1r4">
+                                    <input type="radio" class="form-check-input" id="q1r4" name='answer2' value="4">The Lion King
+                                </label>
+                            </div>    
+                        </form>
+
+                        <form id="question3">
+                                <h4>What was the first full length CGI movie ?</h4>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label" for="q1r1">
+                                        <input type="radio" class="form-check-input" id="q1r1" name='answer3' value="1">A bug's Life
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label" for="q1r2">
+                                        <input type="radio" class="form-check-input" id="q1r2" name='answer3' value="2">Monsters Inc.
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label" for="q1r3">
+                                        <input type="radio" class="form-check-input" id="q1r3" name='answer3' value="3">Toy Story
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label" for="q1r4">
+                                        <input type="radio" class="form-check-input" id="q1r4" name='answer3' value="4">The Lion King
+                                    </label>
+                                </div>    
+                            </form>
+
+                            <form id="question4">
+                                    <h4>What was the first full length CGI movie ?</h4>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="q1r1">
+                                            <input type="radio" class="form-check-input" id="q1r1" name='answer4' value="1">A bug's Life
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="q1r2">
+                                            <input type="radio" class="form-check-input" id="q1r2" name='answer4' value="2">Monsters Inc.
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="q1r3">
+                                            <input type="radio" class="form-check-input" id="q1r3" name='answer4' value="3">Toy Story
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="q1r4">
+                                            <input type="radio" class="form-check-input" id="q1r4" name='answer4' value="4">The Lion King
+                                        </label>
+                                    </div>    
+                                </form>        
+
+                                <form id="question1">
+                                        <h4>What was the first full length CGI movie ?</h4>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="q1r1">
+                                                <input type="radio" class="form-check-input" id="q1r1" name='answer1' value="1">A bug's Life
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="q1r2">
+                                                <input type="radio" class="form-check-input" id="q1r2" name='answer1' value="2">Monsters Inc.
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="q1r3">
+                                                <input type="radio" class="form-check-input" id="q1r3" name='answer1' value="3">Toy Story
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="q1r4">
+                                                <input type="radio" class="form-check-input" id="q1r4" name='answer1' value="4">The Lion King
+                                            </label>
+                                        </div>    
+                                    </form>
+                
+                                    <form id="question2">
+                                            <h4>What was the first full length CGI movie ?</h4>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="q1r1">
+                                                    <input type="radio" class="form-check-input" id="q1r1" name='answer2' value="1">A bug's Life
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="q1r2">
+                                                    <input type="radio" class="form-check-input" id="q1r2" name='answer2' value="2">Monsters Inc.
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="q1r3">
+                                                    <input type="radio" class="form-check-input" id="q1r3" name='answer2' value="3">Toy Story
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="q1r4">
+                                                    <input type="radio" class="form-check-input" id="q1r4" name='answer2' value="4">The Lion King
+                                                </label>
+                                            </div>    
+                                        </form>
+                
+                                        <form id="question3">
+                                                <h4>What was the first full length CGI movie ?</h4>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="q1r1">
+                                                        <input type="radio" class="form-check-input" id="q1r1" name='answer3' value="1">A bug's Life
+                                                    </label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="q1r2">
+                                                        <input type="radio" class="form-check-input" id="q1r2" name='answer3' value="2">Monsters Inc.
+                                                    </label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="q1r3">
+                                                        <input type="radio" class="form-check-input" id="q1r3" name='answer3' value="3">Toy Story
+                                                    </label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="q1r4">
+                                                        <input type="radio" class="form-check-input" id="q1r4" name='answer3' value="4">The Lion King
+                                                    </label>
+                                                </div>    
+                                            </form>
+                
+                                            <form id="question4">
+                                                    <h4>What was the first full length CGI movie ?</h4>
+                                                    <div class="form-check-inline">
+                                                        <label class="form-check-label" for="q1r1">
+                                                            <input type="radio" class="form-check-input" id="q1r1" name='answer4' value="1">A bug's Life
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check-inline">
+                                                        <label class="form-check-label" for="q1r2">
+                                                            <input type="radio" class="form-check-input" id="q1r2" name='answer4' value="2">Monsters Inc.
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check-inline">
+                                                        <label class="form-check-label" for="q1r3">
+                                                            <input type="radio" class="form-check-input" id="q1r3" name='answer4' value="3">Toy Story
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check-inline">
+                                                        <label class="form-check-label" for="q1r4">
+                                                            <input type="radio" class="form-check-input" id="q1r4" name='answer4' value="4">The Lion King
+                                                        </label>
+                                                    </div>    
+                                                </form>      
+                    -->                                                              
+                    
+
+
+                    <button id="btnDone" class="btn btn-lg my-2" type="button">DONE</button>
+
+                </div>
+            </div>
+
+            <div id="resultContainer" class="row my-4">
+                <div class="col-12 text-center">
+                    <h3>All Done !</h3>
+                    <h4>Correct answers:&nbsp;<span id="correct"></span></h4>
+                    <h4>Incorrect answers:&nbsp;<span id="incorrect"></span></h4>
+                    <h4>Unanswered:&nbsp;<span id="unanswered"></span></h4>
                 </div>
             </div>
 
