@@ -15,9 +15,27 @@
 
 .yellow-centered-box {
     background-color: rgb(255,255,153,0.9);
+    box-shadow: 0 0 20px #aaa;
 }
 
 
 #quizContainer, #timer, #resultContainer {
     display: none;
+}
+
+#btnStart {
+    background-color: pink;
+    border: solid 2px blue;
+    font-weight: bold;
+}
+
+#btnDone {
+    background-color: inherit;
+    border: none;
+    font-weight: bold;
+}
+
+#btnDone:hover {
+    background-color: pink;
+    border: solid 2px blue;
 }

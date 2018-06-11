@@ -15,7 +15,7 @@ $(document).ready( function() {
         {
             question: 'What was the first full length CGI movie ?',
             options: ["A bug's Life",'Monsters Inc.','Toy Story','The Lion King'],
-            answer: 2
+            answer: 3
         }, 
         {
             question: 'Which of these is NOT a name of one of the Queen rock band ?',
@@ -33,22 +33,22 @@ $(document).ready( function() {
             answer: 1
         }, 
         {
-            question: 'Question 5',
-            options: ['','','',''],
-            answer: 1
+            question: 'The Concorde was a supersonic passenger airliner flown by which two airlines ?',
+            options: ['Qatar Airways','Air Canada','Air France and British Airways','American Airline and Aeroflot'],
+            answer: 3
         },
-        {   question: 'Question 6',
-            options: ['','','',''],
-            answer: 1
+        {   question: 'In what country would you find large ancient geoglyphs known as the the Nasca Lines?',
+            options: ['Mexico','Peru','Venezuela','Colombia'],
+            answer: 2
         }, 
         {
-            question: 'Question 7',
-            options: ['','','',''],
-            answer: 1
+            question: 'Who was the first woman to be inducted into the Rock and Roll Hall of Fame?',
+            options: ['Annie Lenox','Tina Turner','Joni Mitchell','Aretha Franklin'],
+            answer: 4
         }, 
         {
-            question: 'Question 8',
-            options: ['','','',''],
+            question: 'What American music duo released the studio album “Sounds of Silence” in 1966?',
+            options: ['Simon & Garfunkel','The Righteous Brothers','Sam &n Dave','Richard & Linda Thompson'],
             answer: 1
         }
     ];
@@ -76,7 +76,8 @@ $(document).ready( function() {
             div.append( label );
             form.append( div );
         }
-        $('#quizCol').append( form );
+        //$('#quizCol').append( form );
+        form.insertBefore( "#btnDone" );
         correctAnswersKey.push( quiz[i].answer );
     }
 
